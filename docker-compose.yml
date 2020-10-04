@@ -1,0 +1,24 @@
+version: '3.8'
+
+services: 
+
+    ghost:
+        image: ghost:3.35.3-alpine
+        restart: always
+        ports:
+            - 8080:2368
+        environment:
+            database__client: mysql
+            database__connection__host: db
+            database__connection__user: root
+            database__connection__password: root
+            database__connection__database: CatBlog
+            url: http://localhost:8080
+
+    db:
+        image: mysql:5.7
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        volumes: 
+            - ~/dev/cat-blog/mysql-data:/var/lib/mysql
