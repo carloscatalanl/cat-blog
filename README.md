@@ -6,7 +6,7 @@ to MYSQL container.
 
 ![](welcome.png)
 
-Volumes create a backup to ghost content folder and MYSQL data.
+Volumes create a backup of ghost content folder and MYSQL data.
 
 ```sh
 volumes: 
