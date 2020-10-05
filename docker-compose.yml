@@ -6,7 +6,7 @@ services:
         image: ghost:3.35.3-alpine
         restart: always
         ports:
-            - 8080:2368
+            - 8080:2368 # 8080 -> 2368
         environment:
             database__client: mysql
             database__connection__host: db
@@ -15,7 +15,7 @@ services:
             database__connection__database: CatBlog
             url: http://localhost:8080
         volumes: 
-            - ./ghost-content:/var/lib/ghost/content
+            - ./ghost-content:/var/lib/ghost/content # Blog backup
 
     db:
         image: mysql:5.7
@@ -23,4 +23,4 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: root
         volumes: 
-            - ./mysql-data:/var/lib/mysql
+            - ./mysql-data:/var/lib/mysql # Db backup
