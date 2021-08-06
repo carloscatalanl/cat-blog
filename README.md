@@ -4,7 +4,7 @@
 Ghost mounted in alpine container (Lightweight Linux) connect
 to MYSQL container.
 
-![](welcome.png)
+![](doc/welcome.png)
 
 Volumes create a backup of ghost content folder and MYSQL data.
 
@@ -16,7 +16,7 @@ volumes:
 volumes: 
             - ./mysql-data:/var/lib/mysql
 ```
-![](volumes.png)
+![](doc/volumes.png)
 
 ## Installation
 
